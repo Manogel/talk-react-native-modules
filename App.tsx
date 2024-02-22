@@ -25,14 +25,14 @@ function Divider() {
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
-  // useEffect(() => {
-  //   const unsubscribe = RNCustomModuleEvent.on('onSetData', event => {
-  //     const [key, value] = event;
-  //     Alert.alert('onSetData', `${key}: ${value}`);
-  //   });
+  useEffect(() => {
+    const unsubscribe = RNCustomModuleEvent.on('onSetData', event => {
+      const [key, value] = event;
+      Alert.alert('onSetData', `${key}: ${value}`);
+    });
 
-  //   return unsubscribe.remove;
-  // }, []);
+    return unsubscribe.remove;
+  }, []);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -59,8 +59,11 @@ function App(): React.JSX.Element {
       <Button
         title="getDataAsyncWithError"
         onPress={async () => {
-          const value = await getDataAsync('error');
-          Alert.alert('getDataAsyncWithError', value);
+          try {
+            await getDataAsync('error');
+          } catch (error) {
+            Alert.alert('getDataAsyncWithError', (error as Error).message);
+          }
         }}
       />
       <Divider />
