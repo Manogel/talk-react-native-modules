@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {
+  Alert,
+  Button,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -9,6 +11,12 @@ import {
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
+import {
+  getDataAsync,
+  getDataByCallback,
+  RNCustomModuleEvent,
+  setData,
+} from './custom-module';
 
 function Divider() {
   return <View style={styles.divider} />;
@@ -16,6 +24,15 @@ function Divider() {
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
+  // useEffect(() => {
+  //   const unsubscribe = RNCustomModuleEvent.on('onSetData', event => {
+  //     const [key, value] = event;
+  //     Alert.alert('onSetData', `${key}: ${value}`);
+  //   });
+
+  //   return unsubscribe.remove;
+  // }, []);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -29,6 +46,32 @@ function App(): React.JSX.Element {
       />
       <Text>Olá mundo!</Text>
       <Divider />
+      <Button title="setData" onPress={() => setData('exampleKey', 'value')} />
+      <Divider />
+      <Button
+        title="getDataAsync"
+        onPress={async () => {
+          const value = await getDataAsync('exampleKey');
+          Alert.alert('getDataAsync', value);
+        }}
+      />
+      <Divider />
+      <Button
+        title="getDataAsyncWithError"
+        onPress={async () => {
+          const value = await getDataAsync('error');
+          Alert.alert('getDataAsyncWithError', value);
+        }}
+      />
+      <Divider />
+      <Button
+        title="getDataByCallback"
+        onPress={() => {
+          getDataByCallback('exampleKey', value => {
+            Alert.alert('getDataByCallback', value);
+          });
+        }}
+      />
     </SafeAreaView>
   );
 }
