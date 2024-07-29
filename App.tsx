@@ -28,6 +28,7 @@ function App(): React.JSX.Element {
   useEffect(() => {
     const unsubscribe = RNCustomModuleEvent.on('onSetData', event => {
       const [key, value] = event;
+      console.log('Recebendo atraves do listener');
       Alert.alert('onSetData', `${key}: ${value}`);
     });
 
@@ -46,7 +47,7 @@ function App(): React.JSX.Element {
       />
       <Text>Olá mundo!</Text>
       <Divider />
-      <Button title="setData" onPress={() => setData('exampleKey', 'value')} />
+      <Button title="setData" onPress={() => setData('exampleKey', 'batata')} />
       <Divider />
       <Button
         title="getDataAsync"

@@ -12,6 +12,11 @@ import Foundation
 // or extends from NSObject
 class RNCustomModule: RCTEventEmitter {
   
+  @objc(olaMundo)
+  func olaMundo() -> String {
+    return "Ola manoel"
+  }
+  
   @objc(setData:withValue:)
   func setData(key: String, value: String){
     UserDefaults.standard.set(value, forKey: key)
@@ -21,7 +26,7 @@ class RNCustomModule: RCTEventEmitter {
   
   @objc(getDataAsync:withResolve:withReject:)
   func getDataAsync(key: String, resolve: RCTPromiseResolveBlock, reject: RCTPromiseRejectBlock) {
-    
+    print("Pegando das preferencias")
     if(key == "error") {
       let error = NSError(domain: "Key error received", code: 200)
       reject("ERROR_CODE", "Error received", error)

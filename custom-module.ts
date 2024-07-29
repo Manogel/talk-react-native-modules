@@ -21,7 +21,7 @@ export const getDataByCallback = (
 type EventType = 'onSetData';
 
 export const RNCustomModuleEvent = {
-  on: (event: EventType, callback: (value: string) => void) => {
+  on: (event: EventType, callback: (value: string[]) => void) => {
     return RNCustomModuleEventEmitter.addListener(event, callback);
   },
   removeAllListeners: RNCustomModuleEventEmitter.removeAllListeners,

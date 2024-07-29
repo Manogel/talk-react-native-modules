@@ -12,6 +12,8 @@
 
 @interface RCT_EXTERN_MODULE(RNCustomModule, RCTEventEmitter)
  
+RCT_EXTERN_METHOD(olaMundo)
+
 RCT_EXTERN_METHOD(setData:(NSString *)key withValue:(NSString *)value)
 
 RCT_EXTERN_METHOD(getDataAsync:(NSString *)key withResolve:(RCTPromiseResolveBlock)resolve
