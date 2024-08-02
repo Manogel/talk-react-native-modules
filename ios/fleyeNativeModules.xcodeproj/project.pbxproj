@@ -16,6 +16,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		953442AC2B86BFF2005415D9 /* RNCustomModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953442AB2B86BFF2005415D9 /* RNCustomModule.swift */; };
 		953442AE2B86C1FC005415D9 /* RNCustomModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 953442AD2B86C1FC005415D9 /* RNCustomModule.m */; };
+		95DCA0EE2C57342C008D6A48 /* RNTMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DCA0ED2C57342C008D6A48 /* RNTMapManager.m */; };
+		95DCA0F12C584996008D6A48 /* MKMapView+CustomMethods.m in Sources */ = {isa = PBXBuildFile; fileRef = 95DCA0F02C584996008D6A48 /* MKMapView+CustomMethods.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		953442AA2B86BFF2005415D9 /* fleyeNativeModules-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "fleyeNativeModules-Bridging-Header.h"; sourceTree = "<group>"; };
 		953442AB2B86BFF2005415D9 /* RNCustomModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNCustomModule.swift; sourceTree = "<group>"; };
 		953442AD2B86C1FC005415D9 /* RNCustomModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNCustomModule.m; sourceTree = "<group>"; };
+		95DCA0ED2C57342C008D6A48 /* RNTMapManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNTMapManager.m; sourceTree = "<group>"; };
+		95DCA0EF2C573D04008D6A48 /* RCTConvert+Mapkit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+Mapkit.h"; sourceTree = "<group>"; };
+		95DCA0F02C584996008D6A48 /* MKMapView+CustomMethods.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+CustomMethods.m"; sourceTree = "<group>"; };
+		95DCA0F22C584D72008D6A48 /* MKMapView+CustomMethods.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MKMapView+CustomMethods.h"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -100,6 +106,10 @@
 				953442AB2B86BFF2005415D9 /* RNCustomModule.swift */,
 				953442AA2B86BFF2005415D9 /* fleyeNativeModules-Bridging-Header.h */,
 				953442AD2B86C1FC005415D9 /* RNCustomModule.m */,
+				95DCA0ED2C57342C008D6A48 /* RNTMapManager.m */,
+				95DCA0EF2C573D04008D6A48 /* RCTConvert+Mapkit.h */,
+				95DCA0F02C584996008D6A48 /* MKMapView+CustomMethods.m */,
+				95DCA0F22C584D72008D6A48 /* MKMapView+CustomMethods.h */,
 			);
 			name = fleyeNativeModules;
 			sourceTree = "<group>";
@@ -402,6 +412,8 @@
 			files = (
 				953442AE2B86C1FC005415D9 /* RNCustomModule.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				95DCA0EE2C57342C008D6A48 /* RNTMapManager.m in Sources */,
+				95DCA0F12C584996008D6A48 /* MKMapView+CustomMethods.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				953442AC2B86BFF2005415D9 /* RNCustomModule.swift in Sources */,
 			);

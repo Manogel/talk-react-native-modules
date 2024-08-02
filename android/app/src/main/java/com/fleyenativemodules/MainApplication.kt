@@ -12,6 +12,7 @@ import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.react.flipper.ReactNativeFlipper
 import com.facebook.soloader.SoLoader
 import com.rncustommodule.RNCustomModulePackage
+import com.rnnativemodules.CustomWebviewPackage
 
 class MainApplication : Application(), ReactApplication {
 
@@ -22,6 +23,7 @@ class MainApplication : Application(), ReactApplication {
               // Packages that cannot be autolinked yet can be added manually here, for example:
               // add(MyReactNativePackage())
               add(RNCustomModulePackage())
+              add(CustomWebviewPackage())
             }
 
         override fun getJSMainModuleName(): String = "index"
